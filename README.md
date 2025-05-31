@@ -114,7 +114,10 @@ docker-compose exec app php artisan test --filter=ImportIndicesFromXmlTest
 - Executar testes:
 
 ```bash
-docker exec -it book-api-app php artisan test
+docker exec -it book-api_app_1 php artisan test
+
+#xml:
+docker-compose exec app php artisan test --filter=ImportIndicesFromXmlTest
 ```
 
 ---
