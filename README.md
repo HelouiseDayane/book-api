@@ -81,16 +81,19 @@ cp .env.example .env
 docker-compose up -d
 
 # Instale as dependências PHP
-docker exec -it book-api-app composer install
+docker exec -it book-api_app_1 composer install
 
 # Gere a chave do Laravel
-docker exec -it book-api-app php artisan key:generate
+docker-compose exec -it book-api_app_1 php artisan key:generate
 
 # Rode as migrations
-docker exec -it book-api-app php artisan migrate
+docker-compose exec app php artisan migrate       
 
 # Execute os testes (opcional)
-docker exec -it book-api-app php artisan test
+docker exec -it book-api_app_1 php artisan test
+
+#xml:
+docker-compose exec app php artisan test --filter=ImportIndicesFromXmlTest
 ```
 
 ---
